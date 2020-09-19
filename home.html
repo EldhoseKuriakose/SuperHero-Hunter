@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/home.style.css">
+    <title>Superhero Hunter</title>
+</head>
+<body>
+    <h1 id="title">Superhero Hunter</h1>
+    <div class="tab-container">
+        <button id="home-button" onclick="changeTabHome()">Home</button>
+        <button id="favourite-button" onclick="changeTabFavourite()">Favourites</button>
+    </div>
+    <div id="home-container">
+        <div id="search-container">
+            <input id="search-box" type="text" placeholder="Search For Superheroes">
+            <img src="https://www.flaticon.com/svg/static/icons/svg/1086/1086933.svg" id="search-icon" alt="search-icon">
+        </div>
+        <ul id="search-list"></ul>
+    </div>
+
+    <div id="favourites-container"></div>
+
+    <script src="./assets/home.script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+#title {
+    position: absolute;
+    left: 40vw;
+    top: 12vh;
+    font-family: sans-serif;
+    font-size: 44px;
+    color: blue;
+}
+
+.tab-container {
+    width: 14vw;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    position: absolute;
+    left: 43vw;
+    top: 5vh;
+}
+
+.tab-container button {
+    border: none;
+    width: 120px;
+    height: 60px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.tab-container button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: lightblue;
+    box-shadow: 2px 2px 2px 2px;
+}
+
+#search-container {
+    width: 50vw;
+    height: 80px;
+    position: absolute;
+    top: 30vh;
+    left: 29vw;
+}
+
+#search-container #search-box {
+    width: 40vw;
+    height: 50px;
+    margin-right: -5px;
+    border-right: none;
+    padding-left: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#search-container #search-icon {
+    width: 30px;
+    height: 50px;
+    align-self: center;
+    vertical-align: middle;
+    border: 2px solid black;
+    margin-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 2px;
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+
+#search-list {
+    position: absolute;
+    width: 43vw;
+    height: 40vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    top: 34vh;
+    left: 29vw;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#search-list .character {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#search-list .character a {
+    text-decoration: none;
+}
+
+#search-list .character a .character-name {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+    width: 10vw;
+}
+
+#search-list .character a .character-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: gray;
+}
+
+#search-list .character .character-image {
+    width: 30px;
+    height: 40px;
+}
+
+#search-list .character .gender {
+    width: 10vw;
+    font-family: sans-serif;
+}
+
+#search-list .character .publisher {
+    width: 13vw;
+    font-family: sans-serif;
+}
+
+#search-list .character .add-to-favourite {
+    width: 80px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+}
+
+#search-list .character .add-to-favourite:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
