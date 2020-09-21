@@ -77,11 +77,10 @@
     position: absolute;
     width: 43vw;
     height: 40vh;
-    overflow: hidden;
-    overflow-y: scroll;
-    top: 34vh;
+    max-width: 43vw;
+    overflow: auto;
+    top: 35vh;
     left: 29vw;
-    border: 1px solid black;
     padding: 10px;
 }
 
@@ -139,3 +138,60 @@
     opacity: 0.7;
 }
 
+#favourites-container #character-list {
+    list-style-type: none;
+    position: absolute;
+    top: 20vh;
+}
+
+#favourites-container #character-list div {
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+#favourites-container #character-list div li {
+    width: 150px;
+    height: 200px;
+    display: inline-block;
+}
+
+#favourites-container #character-list div li a {
+    text-decoration: none;
+}
+
+#favourites-container #character-list div li a h2 {
+    color: darkorange;
+    font-family: sans-serif;
+}
+
+#favourites-container #character-list div li a h2:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+#favourites-container #character-list div li p {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#favourites-container #character-list div li img {
+    width: 130px;
+    height: 140px;
+}
+
+#favourites-container #character-list div li button {
+    width: 70px;
+    height: 40px;
+    color: white;
+    background-color: darkred;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+#favourites-container #character-list div li button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
