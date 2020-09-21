@@ -1,3 +1,4 @@
+//Initialise all required items
 var homeButton = document.getElementById("home-button");
 var favouriteButton = document.getElementById("favourite-button");
 var tabno = 1;
@@ -5,6 +6,7 @@ var homeContainer = document.getElementById("home-container");
 var favouritesContainer = document.getElementById("favourites-container");
 var characterList = document.getElementById("character-list");
 var favouritesList = [];
+//Local storage to make favourites list persistent
 var favouritesArray = JSON.parse(localStorage.getItem("favouritesList"));
 
 if(favouritesArray != null) {
@@ -58,6 +60,7 @@ function addToFavorites(character) {
     localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
 }
 
+//Opening profile of hero
 const openProfile = async(id) => {
     try {
         const res = await fetch(`https://www.superheroapi.com/api.php/1747613848727847/${id}`);
