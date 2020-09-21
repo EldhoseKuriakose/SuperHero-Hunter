@@ -17,6 +17,8 @@ let results = [];
 
 var searchList = document.getElementById("search-list");
 
+var profile = document.getElementById("popup");
+
 //Switching tab to home
 function changeTabHome() {
     if(tabno != 1) {
@@ -56,14 +58,47 @@ function addToFavorites(character) {
     localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
 }
 
+const openProfile = async(id) => {
+    try {
+        const res = await fetch(`https://www.superheroapi.com/api.php/1747613848727847/${id}`);
+        character = await res.json();
+        profile.innerHTML = (
+            `
+                <h1 id="character-name">${character.name}</h1>
+                <img id="character-image" src="${character.image.url}"></img>
+                <p id="close-button" onclick="closeProfile()">X</p>
+                <div id="details-container">
+                    <p id="character-id">id: ${character.id}</p>
+                    <p id="gender">${character.appearance.gender}</p>
+                    <p id="publisher">${character.biography.publisher}</p>
+                    <p id="weight">Weight: ${character.appearance.weight[0]}</p>
+                    <p id="work">Occupation: ${character.work.occupation}</p>
+                    <h2>Powerstats</h2>
+                    <p id="combat">Combat: ${character.powerstats.combat}</p>
+                    <p id="durability">Durability: ${character.powerstats.durability}</p>
+                    <p id="intelligence">Intelligence: ${character.powerstats.intelligence}</p>
+                    <p id="power">Power: ${character.powerstats.power}</p>
+                    <p id="speed">Speed: ${character.powerstats.speed}</p>
+                    <p id="strength">Strength: ${character.powerstats.strength}</p>
+                </div>
+            `
+        );
+        profile.style.display = "block";    
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+const closeProfile = () => {
+    profile.style.display = "none";
+}
+
 //Displaying heroes when searched
 const displayCharacters = (characters) => {
     const htmlString = characters.map((character) => {
             return `
                 <li class="character">
-                    <a href="./profile.html?id=${character.id}">
-                        <h2 class="character-name">${character.name}</h2>
-                    </a>
+                    <h2 class="character-name" onclick="openProfile(${character.id})">${character.name}</h2>
                     <img class="character-image" src="${character.image.url}"></img>
                     <h3 class="gender">${character.appearance.gender}</h3>
                     <h3 class="publisher">${character.biography.publisher}</h3>
@@ -87,18 +122,14 @@ const loadCharacters = async () => {
             htmlString.innerHTML = (
                 `
                     <li class="character">
-                        <a href="./profile.html?id=${character.id}">
-                            <h2 id="character-name">${character.name}</h2>
-                        </a>
                         <p id="character-id">id: ${character.id}</p>
                         <img class="character-image" src="${character.image.url}"></img>
-                        <p class="fullname">${character.appearance.gender}</p>
-                
+                        <h2 id="character-name" onclick="openProfile(${character.id})">${character.name}</h2>
+                        <p class="gender">${character.appearance.gender}</p>
                         <p class="publisher">${character.biography.publisher}</p>
-                        <button class="remove-from-favourites" data-id=${character.id} onClick="removeCharacter(${character.id})">
+                        <button class="remove-from-favourites" data-id=${character.id} onclick="removeCharacter(${character.id})">
                             Remove
-                        </button>
-                                
+                        </button>  
                     </li>
                 
                 `
