@@ -203,6 +203,8 @@ body {
 #popup {
     width: 90vw;
     height: 90vh;
+    max-height: 90vh;
+    overflow: auto;
     background-color: wheat;
     position: absolute;
     margin: 30px;
@@ -219,7 +221,9 @@ body {
 
 #popup img {
     position: absolute;
-    top: 10vh;
+    width: 35vw;
+    height: 65vh;
+    top: 12vh;
     left: 10vw;
 }
 
